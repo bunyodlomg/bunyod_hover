@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" onmousemove="myFunction(event)" onmouseout="clearCoor()">
+
+        <a href="#" class="romb1"><h1>Bunyod</h1></a>
+        <a href="#" class="romb2"></a>
+        <a href="#" class="romb3"></a>
+        <a href="#" class="romb4"></a>
+        <a href="#" class="romb5"></a>
+    </div>
+
+    <script>
+        var box = document.querySelector('.box');
+        var s1 = document.querySelector('.romb1');
+        var s2 = document.querySelector('.romb2');
+        var s3 = document.querySelector('.romb3');
+        var s4 = document.querySelector('.romb4');
+        var s5 = document.querySelector('.romb5');
+
+        var array = [s1, s2, s3, s4, s5];
+        function myFunction(e) {
+            var num = 250;
+            array.forEach(element => {
+                element.style.transition= '1s'
+                element.style.transform = 'translateY(-'+ (num-=50) +'px)';
+            });
+        }
+
+        function clearCoor() {
+            array.forEach(element => {
+                element.style.transform = 'translateY(0px)';                
+            });
+        }
+
+    </script>
+</body>
+
+</html>
